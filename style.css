@@ -14,20 +14,20 @@ body{ background:#0f172a;
       justify-content:center;
       align-items:center;}
 
-h1{
-    #skills {padding: 80px;}
+h1{font-size:70px;}
 
-#skills ul {list-style: none;
-            margin-top: 20px;}
+#skills{ padding:80px;}
 
-#skills li { background: #1e293b;
-             margin: 10px auto;
-             padding: 15px;
-             width: 250px;
-             border-radius: 10px;}
+#skills ul{
+    list-style:none;
+    margin-top:20px;}
 
-    font-size:70px;
-}
+#skills li{
+    background:#1e293b;
+    margin:10px auto;
+    padding:15px;
+    width:250px;
+    border-radius:10px;}
 
 p{  margin-top:20px;
     font-size:24px;}
