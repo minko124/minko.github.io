@@ -104,7 +104,49 @@ section{
     border-radius: 50px;
     font-weight: bold;
 }
+header{
 
+    position:fixed;
+
+    top:0;
+
+    width:100%;
+
+    padding:20px 50px;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    background:rgba(15,23,42,.8);
+
+    backdrop-filter:blur(10px);
+
+}
+
+.logo{
+
+    font-size:30px;
+
+}
+
+nav a{
+
+    color:white;
+
+    margin-left:25px;
+
+    text-decoration:none;
+
+}
+
+nav a:hover{
+
+    color:#38bdf8;
+
+}
 .hero a:hover {
     transform: scale(1.08);
     box-shadow: 0 0 20px rgba(255,255,255,0.4);
