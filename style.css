@@ -8,11 +8,13 @@ body{ background:#0f172a;
       color:white;
       font-family:sans-serif;}
 
-.hero{height:30vh;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
-      align-items:center;}
+.hero{
+    min-height:55vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding-top:80px;}
 
 h1{font-size:70px;}
 
