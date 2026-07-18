@@ -1,1 +1,71 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
+body{
+
+    background:#0f172a;
+    color:white;
+
+    font-family:sans-serif;
+}
+
+.hero{
+
+    height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+}
+
+h1{
+
+    font-size:70px;
+
+}
+
+p{
+
+    margin-top:20px;
+
+    font-size:24px;
+
+}
+
+a{
+
+    margin-top:40px;
+
+    color:white;
+
+    border:2px solid white;
+
+    padding:15px 40px;
+
+    text-decoration:none;
+
+    transition:.3s;
+
+}
+
+a:hover{
+
+    background:white;
+
+    color:#0f172a;
+
+}
+
+section{
+
+    padding:100px;
+
+}
