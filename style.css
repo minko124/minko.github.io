@@ -161,13 +161,22 @@ nav a:hover{
     text-align: center;
 }
 
-.card {
-    background: #1e293b;
-    width: 320px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 15px;
-    transition: 0.3s;
+.card{
+
+    width:300px;
+
+    padding:25px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(255,255,255,.15);
+
+    backdrop-filter:blur(10px);
+
+    transition:.3s;
+
 }
 .works-container{
 
