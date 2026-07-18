@@ -9,132 +9,77 @@ body{ background:#0f172a;
       font-family:sans-serif;}
 
 .hero{height:100vh;
-     display:flex;
-     flex-direction:column;
-     justify-content:center;
-     align-items:center;}
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;}
 
 h1{
+    #skills {padding: 80px;}
 
-#skills {
-    padding: 80px;
-}
+#skills ul {list-style: none;
+            margin-top: 20px;}
 
-#skills ul {
-    list-style: none;
-    margin-top: 20px;
-}
-
-#skills li {
-    background: #1e293b;
-    margin: 10px auto;
-    padding: 15px;
-    width: 250px;
-    border-radius: 10px;
-}
+#skills li { background: #1e293b;
+             margin: 10px auto;
+             padding: 15px;
+             width: 250px;
+             border-radius: 10px;}
 
     font-size:70px;
-
 }
 
-p{
+p{  margin-top:20px;
+    font-size:24px;}
 
-    margin-top:20px;
-
-    font-size:24px;
-
-}
-
-a{
-
-    margin-top:40px;
-
+a{  margin-top:40px;
     color:white;
-
     border:2px solid white;
-
     padding:15px 40px;
-
     text-decoration:none;
+    transition:.3s;}
 
-    transition:.3s;
+a:hover{ background:white;
+         color:#0f172a;}
 
-}
+section{  padding:100px;}
 
-a:hover{
+.hero {   background: linear-gradient(135deg, #1e293b, #0f172a);
+          text-align: center;}
 
-    background:white;
+.hero h1 { font-size: 5rem;
+           letter-spacing: 5px;}
 
-    color:#0f172a;
+.hero p { color: #cbd5e1;}
 
-}
-
-section{
-
-    padding:100px;
-
-}
-.hero {
-    background: linear-gradient(135deg, #1e293b, #0f172a);
-    text-align: center;
-}
-
-.hero h1 {
-    font-size: 5rem;
-    letter-spacing: 5px;
-}
-
-.hero p {
-    color: #cbd5e1;
-}
-
-.hero a {
-    border-radius: 50px;
-    font-weight: bold;
-}
+.hero a { border-radius: 50px;
+          font-weight: bold;}
 header{
-
     position:fixed;
-
     top:0;
-
     width:100%;
-
     padding:20px 50px;
-
     display:flex;
-
     justify-content:space-between;
-
     align-items:center;
-
     background:rgba(15,23,42,.8);
-
     backdrop-filter:blur(10px);
-
 }
 
 .logo{
-
     font-size:30px;
-
 }
 
 nav a{
-
     color:white;
-
     margin-left:25px;
-
     text-decoration:none;
-
 }
 
 nav a:hover{
-
-    color:#38bdf8;
-
+   color:#38bdf8;
 }
+
 .hero a:hover {
     transform: scale(1.08);
     box-shadow: 0 0 20px rgba(255,255,255,0.4);
@@ -145,33 +90,22 @@ nav a:hover{
 }
 
 .card{
-
     width:300px;
-
     padding:25px;
-
     border-radius:20px;
-
     background:rgba(255,255,255,.08);
-
     border:1px solid rgba(255,255,255,.15);
-
     backdrop-filter:blur(10px);
-
     transition:.3s;
-
 }
+
 .works-container{
-
     display:flex;
-
     justify-content:center;
-
     gap:30px;
-
     flex-wrap:wrap;
-
 }
+
 .card:hover {
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(255,255,255,0.15);
