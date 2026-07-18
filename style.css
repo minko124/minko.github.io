@@ -151,3 +151,21 @@ nav a:hover{
     transform: scale(1.08);
     box-shadow: 0 0 20px rgba(255,255,255,0.4);
 }
+#works {
+    padding: 80px;
+    text-align: center;
+}
+
+.card {
+    background: #1e293b;
+    width: 320px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(255,255,255,0.15);
+}
