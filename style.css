@@ -124,3 +124,17 @@ nav a:hover{
     border-radius:50%;
     object-fit:cover;
 }
+
+.card-button{
+    display:inline-block;
+    margin-top:20px;
+    padding:10px 20px;
+    border:2px solid white;
+    border-radius:30px;
+    color:white;
+    text-decoration:none;
+    transition:0.3s;
+}
+
+.card-button:hover{ background:white;
+                    color:#0f172a;}
