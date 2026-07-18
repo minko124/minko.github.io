@@ -193,3 +193,17 @@ nav a:hover{
     transform: translateY(-8px);
     box-shadow: 0 10px 25px rgba(255,255,255,0.15);
 }
+
+.developer{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:20px;
+}
+
+.tanuki{
+    width:80px;
+    height:80px;
+    border-radius:50%;
+    object-fit:cover;
+}
