@@ -4,27 +4,15 @@ html{scroll-behavior:smooth;}
     padding:0;
     box-sizing:border-box;}
 
-body{
+body{ background:#0f172a;
+      color:white;
+      font-family:sans-serif;}
 
-    background:#0f172a;
-    color:white;
-
-    font-family:sans-serif;
-}
-
-.hero{
-
-    height:100vh;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-
-    align-items:center;
-
-}
+.hero{height:100vh;
+     display:flex;
+     flex-direction:column;
+     justify-content:center;
+     align-items:center;}
 
 h1{
 
