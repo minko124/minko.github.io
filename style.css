@@ -8,7 +8,7 @@ body{ background:#0f172a;
       color:white;
       font-family:sans-serif;}
 
-.hero{height:100vh;
+.hero{height:60vh;
       display:flex;
       flex-direction:column;
       justify-content:center;
