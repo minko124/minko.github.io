@@ -127,16 +127,13 @@ nav a:hover {
 
 }
 
-.tanuki {
-
-    width: 80px;
-    height: 80px;
-
-    object-fit: cover;
-
-    border-radius: 50%;
+.tanuki{
+    width:100px;
+    height:100px;
+    object-fit:cover;
+    border-radius:50%;
+    margin-left:20px;
 }
-
 /* =====================================
    共通セクション
 ===================================== */
