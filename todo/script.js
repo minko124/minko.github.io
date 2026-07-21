@@ -28,10 +28,12 @@ task.addEventListener("click", function(){
         li.remove();
     });
 
-    list.appendChild(li);
+ list.appendChild(li);
 
-    input.value = "";
-    input.focus();
+saveTasks();
+
+input.value = "";
+input.focus();
 }
 input.addEventListener("keydown", function(event){
 
