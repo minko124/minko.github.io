@@ -39,6 +39,12 @@ input.addEventListener("keydown", function(event){
 
         addTask();
 
+        function saveTasks(){
+
+    localStorage.setItem("tasks", list.innerHTML);
+
+}
+
     }
 
 });
