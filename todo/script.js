@@ -25,7 +25,9 @@ task.addEventListener("click", function(){
 });
 
     li.querySelector(".delete").addEventListener("click", function () {
-        li.remove();
+       li.remove();
+
+saveTasks();
     });
 
  list.appendChild(li);
