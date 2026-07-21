@@ -47,7 +47,7 @@ input.addEventListener("keydown", function(event){
         function saveTasks(){
 
     localStorage.setItem("tasks", list.innerHTML);
-
+addEvents();
 }
 
     }
@@ -60,6 +60,48 @@ window.addEventListener("load", function(){
     if(saved){
 
         list.innerHTML = saved;
+
+    }
+
+});
+
+function addEvents(){
+
+    document.querySelectorAll(".delete").forEach(button=>{
+
+        button.onclick=function(){
+
+            this.parentElement.remove();
+
+            saveTasks();
+
+        };
+
+    });
+
+    document.querySelectorAll(".task").forEach(task=>{
+
+        task.onclick=function(){
+
+            this.classList.toggle("completed");
+
+            saveTasks();
+
+        };
+
+    });
+
+}
+
+window.addEventListener("load",function(){
+
+    const saved=localStorage.getItem("tasks");
+
+    if(saved){
+
+        list.innerHTML=saved;
+
+        addEvents();
 
     }
 
