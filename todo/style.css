@@ -117,7 +117,14 @@ li:hover{
     padding:8px 14px;
     border-radius:8px;
 }
+.completed{
 
+    text-decoration: line-through;
+
+    opacity:.5;
+
+}
 .delete:hover{
     background:#dc2626;
 }
+
