@@ -2,7 +2,7 @@ console.log("Portfolio Start!");
 
 const fades = document.querySelectorAll(".fade");
 
-window.addEventListener("scroll", () => {
+function showFade() {
 
     const trigger = window.innerHeight * 0.85;
 
@@ -10,10 +10,15 @@ window.addEventListener("scroll", () => {
 
         const top = item.getBoundingClientRect().top;
 
-        if(top < trigger){
+        if (top < trigger) {
             item.classList.add("show");
         }
 
     });
 
-});
+}
+
+window.addEventListener("scroll", showFade);
+
+// ページを開いた瞬間にも判定する
+showFade();
