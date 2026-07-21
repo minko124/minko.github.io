@@ -53,3 +53,14 @@ input.addEventListener("keydown", function(event){
     }
 
 });
+window.addEventListener("load", function(){
+
+    const saved = localStorage.getItem("tasks");
+
+    if(saved){
+
+        list.innerHTML = saved;
+
+    }
+
+});
