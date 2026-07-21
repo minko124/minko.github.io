@@ -12,10 +12,17 @@ function addTask() {
 
     const li = document.createElement("li");
 
-    li.innerHTML = `
-        <span>${text}</span>
-        <button class="delete">削除</button>
-    `;
+  li.innerHTML = `
+    <span class="task">${text}</span>
+    <button class="delete">削除</button>
+`;
+    const task = li.querySelector(".task");
+
+task.addEventListener("click", function(){
+
+    task.classList.toggle("completed");
+
+});
 
     li.querySelector(".delete").addEventListener("click", function () {
         li.remove();
