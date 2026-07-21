@@ -314,3 +314,66 @@ footer {
     opacity:1;
     transform:translateY(0);
 }
+
+/* ==========================
+   スマホ対応
+========================== */
+
+@media (max-width: 768px){
+
+    header{
+
+        flex-direction:column;
+        padding:20px;
+
+    }
+
+    nav{
+
+        margin-top:15px;
+
+    }
+
+    nav a{
+
+        margin:0 10px;
+
+    }
+
+    .hero h1{
+
+        font-size:3rem;
+
+    }
+
+    section{
+
+        padding:60px 20px;
+
+    }
+
+    .profile{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .works-container{
+
+        flex-direction:column;
+
+        align-items:center;
+
+    }
+
+    .card{
+
+        width:100%;
+
+        max-width:350px;
+
+    }
+
+}
