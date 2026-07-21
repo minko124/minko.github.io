@@ -26,3 +26,12 @@ function addTask() {
     input.value = "";
     input.focus();
 }
+input.addEventListener("keydown", function(event){
+
+    if(event.key === "Enter"){
+
+        addTask();
+
+    }
+
+});
