@@ -20,8 +20,9 @@ function addTask() {
 
 task.addEventListener("click", function(){
 
-    task.classList.toggle("completed");
+   task.classList.toggle("completed");
 
+saveTasks();
 });
 
     li.querySelector(".delete").addEventListener("click", function () {
