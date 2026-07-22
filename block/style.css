@@ -1,1 +1,66 @@
+/* ==========================
+   共通
+========================== */
 
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:linear-gradient(135deg,#0f172a,#1e293b);
+    font-family:sans-serif;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    color:white;
+}
+
+/* ==========================
+   コンテナ
+========================== */
+
+.container{
+    text-align:center;
+}
+
+/* ==========================
+   タイトル
+========================== */
+
+h1{
+    margin-bottom:30px;
+    font-size:2.5rem;
+    letter-spacing:2px;
+}
+
+/* ==========================
+   ゲーム画面
+========================== */
+
+canvas{
+    background:#111827;
+    border:4px solid #38bdf8;
+    border-radius:15px;
+    box-shadow:0 0 30px rgba(56,189,248,.4);
+    max-width:100%;
+}
+
+/* ==========================
+   スマホ対応
+========================== */
+
+@media(max-width:768px){
+
+    h1{
+        font-size:2rem;
+    }
+
+    canvas{
+        width:95%;
+        height:auto;
+    }
+
+}
