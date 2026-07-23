@@ -77,6 +77,11 @@ function drawPaddle(){
 
 function draw(){
 
+    let gameOver = false;
+    if(gameOver){
+    return;
+}
+    
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
     drawBall();
@@ -125,11 +130,13 @@ if(
 }
     // 下に落ちた
 
-if(ball.y > canvas.height){
+if(ball.y > canvas.height && !gameOver){
+
+    gameOver = true;
 
     alert("ゲームオーバー！");
 
-    document.location.reload();
+    location.reload();
 
 }
 }
