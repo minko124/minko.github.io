@@ -18,6 +18,34 @@ const paddle = {
     height: 15
 };
 
+let rightPressed = false;
+let leftPressed = false;
+
+document.addEventListener("keydown", function(e){
+
+    if(e.key === "ArrowRight"){
+        rightPressed = true;
+    }
+
+    if(e.key === "ArrowLeft"){
+        leftPressed = true;
+    }
+
+});
+
+document.addEventListener("keyup", function(e){
+
+    if(e.key === "ArrowRight"){
+        rightPressed = false;
+    }
+
+    if(e.key === "ArrowLeft"){
+        leftPressed = false;
+    }
+
+});
+
+
 function drawBall(){
 
     ctx.beginPath();
@@ -53,6 +81,20 @@ function draw(){
 
     drawPaddle();
 
+    // バーを動かす
+
+if(rightPressed && paddle.x < canvas.width - paddle.width){
+
+    paddle.x += 7;
+
+}
+
+if(leftPressed && paddle.x > 0){
+
+    paddle.x -= 7;
+
+}
+    
     // ボールを動かす
     ball.x += ball.dx;
     ball.y += ball.dy;
@@ -66,7 +108,28 @@ function draw(){
     if(ball.y - ball.radius < 0){
         ball.dy *= -1;
     }
+    // バーとの当たり判定
 
+if(
+
+    ball.y + ball.radius > paddle.y &&
+    ball.x > paddle.x &&
+    ball.x < paddle.x + paddle.width
+
+){
+
+    ball.dy *= -1;
+
+}
+    // 下に落ちた
+
+if(ball.y > canvas.height){
+
+    alert("ゲームオーバー！");
+
+    document.location.reload();
+
+}
 }
 
 setInterval(draw,16);
