@@ -18,6 +18,8 @@ const paddle = {
     height: 15
 };
 
+let gameOver = false;
+   
 let rightPressed = false;
 let leftPressed = false;
 
@@ -32,21 +34,6 @@ document.addEventListener("keydown", function(e){
     }
 
 });
-
-document.addEventListener("keydown", function(e){
-
-    console.log(e.key);
-
-    if(e.key === "ArrowRight"){
-        rightPressed = true;
-    }
-
-    if(e.key === "ArrowLeft"){
-        leftPressed = true;
-    }
-
-});
-
 
 function drawBall(){
 
@@ -77,8 +64,7 @@ function drawPaddle(){
 
 function draw(){
 
-    let gameOver = false;
-    if(gameOver){
+     if(gameOver){
     return;
 }
     
@@ -118,14 +104,13 @@ if(leftPressed && paddle.x > 0){
     // バーとの当たり判定
 
 if(
-
     ball.y + ball.radius > paddle.y &&
+    ball.y + ball.radius < paddle.y + paddle.height &&
     ball.x > paddle.x &&
     ball.x < paddle.x + paddle.width
-
 ){
 
-    ball.dy *= -1;
+    ball.dy = -Math.abs(ball.dy);
 
 }
     // 下に落ちた
