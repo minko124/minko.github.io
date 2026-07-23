@@ -23,28 +23,14 @@ let gameOver = false;
 let rightPressed = false;
 let leftPressed = false;
 
-document.addEventListener("keydown", function(e){
-
-    if(e.key === "ArrowRight"){
-        rightPressed = true;
-    }
-
-    if(e.key === "ArrowLeft"){
-        leftPressed = true;
-    }
-
+document.addEventListener("keydown", (e) => {
+    if (e.key === "ArrowRight") rightPressed = true;
+    if (e.key === "ArrowLeft") leftPressed = true;
 });
 
-document.addEventListener("keyup", function(e){
-
-    if(e.key === "ArrowRight"){
-        rightPressed = false;
-    }
-
-    if(e.key === "ArrowLeft"){
-        leftPressed = false;
-    }
-
+document.addEventListener("keyup", (e) => {
+    if (e.key === "ArrowRight") rightPressed = false;
+    if (e.key === "ArrowLeft") leftPressed = false;
 });
 
 
