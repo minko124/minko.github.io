@@ -18,6 +18,37 @@ const paddle = {
     height: 15
 };
 
+// ブロック
+const brickRowCount = 5;
+const brickColumnCount = 8;
+
+const brickWidth = 80;
+const brickHeight = 25;
+const brickPadding = 15;
+
+const brickOffsetTop = 50;
+const brickOffsetLeft = 35;
+
+const bricks = [];
+
+for(let c = 0; c < brickColumnCount; c++){
+
+    bricks[c] = [];
+
+    for(let r = 0; r < brickRowCount; r++){
+
+        bricks[c][r] = {
+            x:0,
+            y:0,
+            status:true
+        };
+
+    }
+
+}
+
+
+
 let gameOver = false;
    
 let rightPressed = false;
@@ -75,6 +106,42 @@ function drawPaddle(){
 
 }
 
+function drawBricks(){
+
+    for(let c=0;c<brickColumnCount;c++){
+
+        for(let r=0;r<brickRowCount;r++){
+
+            if(bricks[c][r].status){
+
+                const brickX =
+                    brickOffsetLeft +
+                    c * (brickWidth + brickPadding);
+
+                const brickY =
+                    brickOffsetTop +
+                    r * (brickHeight + brickPadding);
+
+                bricks[c][r].x = brickX;
+                bricks[c][r].y = brickY;
+
+                ctx.fillStyle = "#38bdf8";
+
+                ctx.fillRect(
+                    brickX,
+                    brickY,
+                    brickWidth,
+                    brickHeight
+                );
+
+            }
+
+        }
+
+    }
+
+}
+
 function draw(){
 
      if(gameOver){
@@ -83,6 +150,8 @@ function draw(){
     
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
+    drawBricks();
+    
     drawBall();
 
     drawPaddle();
