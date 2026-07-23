@@ -1,5 +1,3 @@
-console.log("script読み込み成功");
-
 const canvas = document.getElementById("game");
 const ctx = canvas.getContext("2d");
 
@@ -35,14 +33,16 @@ document.addEventListener("keydown", function(e){
 
 });
 
-document.addEventListener("keyup", function(e){
+document.addEventListener("keydown", function(e){
+
+    console.log(e.key);
 
     if(e.key === "ArrowRight"){
-        rightPressed = false;
+        rightPressed = true;
     }
 
     if(e.key === "ArrowLeft"){
-        leftPressed = false;
+        leftPressed = true;
     }
 
 });
