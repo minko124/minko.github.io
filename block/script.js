@@ -108,37 +108,8 @@ function drawPaddle(){
 
 function drawBricks(){
 
-    for(let c=0;c<brickColumnCount;c++){
-
-        for(let r=0;r<brickRowCount;r++){
-
-            if(bricks[c][r].status){
-
-                const brickX =
-                    brickOffsetLeft +
-                    c * (brickWidth + brickPadding);
-
-                const brickY =
-                    brickOffsetTop +
-                    r * (brickHeight + brickPadding);
-
-                bricks[c][r].x = brickX;
-                bricks[c][r].y = brickY;
-
-                ctx.fillStyle = "#38bdf8";
-
-                ctx.fillRect(
-                    brickX,
-                    brickY,
-                    brickWidth,
-                    brickHeight
-                );
-
-            }
-
-        }
-
-    }
+    ctx.fillStyle = "red";
+    ctx.fillRect(100, 100, 80, 25);
 
 }
 
