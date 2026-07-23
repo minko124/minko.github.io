@@ -35,6 +35,19 @@ document.addEventListener("keydown", function(e){
 
 });
 
+document.addEventListener("keyup", function(e){
+
+    if(e.key === "ArrowRight"){
+        rightPressed = false;
+    }
+
+    if(e.key === "ArrowLeft"){
+        leftPressed = false;
+    }
+
+});
+
+
 function drawBall(){
 
     ctx.beginPath();
