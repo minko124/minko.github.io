@@ -140,8 +140,9 @@ function drawPaddle(){
 
 function drawScore(){
 
-    ctx.font = "24px sans-serif";
+    ctx.textAlign = "left";   // ←追加
 
+    ctx.font = "24px sans-serif";
     ctx.fillStyle = "#ffffff";
 
     ctx.fillText("Score : " + score, 20, 30);
