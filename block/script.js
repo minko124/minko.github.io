@@ -60,7 +60,7 @@ bricks[c][r] = {
 
 //変数定義
 let gameOver = false;
-
+let gameStart = false;
 let score = 0;  
 // ブロックの総数
 const maxScore = brickRowCount * brickColumnCount;
@@ -92,6 +92,33 @@ window.addEventListener("keyup", (e) => {
 
 });
 
+window.addEventListener("keydown",(e)=>{
+
+    if(gameOver && e.code === "Enter"){
+
+        location.reload();
+
+    }
+
+});
+
+window.addEventListener("keydown", (e) => {
+
+    if (e.code === "Enter") {
+
+        if (!gameStart) {
+
+            gameStart = true;
+
+        } else if (gameOver) {
+
+            location.reload();
+
+        }
+
+    }
+
+});
 
 function drawBall(){
 
@@ -216,9 +243,21 @@ function collisionDetection(){
                     score++;
                     if(score === maxScore){
 
-    alert("🎉 YOU WIN!");
+    gameOver = true;
 
-    location.reload();
+    draw();
+
+    ctx.fillStyle = "rgba(0,0,0,0.7)";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle = "#fff";
+    ctx.font = "60px sans-serif";
+    ctx.textAlign = "center";
+
+    ctx.fillText("🎉 YOU WIN! 🎉",400,220);
+
+    ctx.font = "30px sans-serif";
+    ctx.fillText("Enterキーでリスタート",400,300);
 
 }
                 }
@@ -233,6 +272,23 @@ function collisionDetection(){
 
 function draw(){
 
+     if(!gameStart){
+
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    ctx.fillStyle="#ffffff";
+
+    ctx.textAlign="center";
+
+    ctx.font="60px sans-serif";
+    ctx.fillText("BLOCK BREAKER",400,180);
+
+    ctx.font="30px sans-serif";
+    ctx.fillText("Enterキーでスタート",400,270);
+
+    return;
+
+}
      if(gameOver){
     return;
 }
