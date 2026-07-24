@@ -60,6 +60,7 @@ bricks[c][r] = {
 
 //変数定義
 let gameOver = false;
+let gameClear = false;
 let gameStart = false;
 let score = 0;  
 // ブロックの総数
@@ -92,16 +93,6 @@ window.addEventListener("keyup", (e) => {
 
 });
 
-window.addEventListener("keydown",(e)=>{
-
-    if(gameOver && e.code === "Enter"){
-
-        location.reload();
-
-    }
-
-});
-
 window.addEventListener("keydown", (e) => {
 
     if (e.code === "Enter") {
@@ -110,7 +101,7 @@ window.addEventListener("keydown", (e) => {
 
             gameStart = true;
 
-        } else if (gameOver) {
+        } else if (gameOver || gameClear) {
 
             location.reload();
 
@@ -191,15 +182,8 @@ ctx.fillRect(
 
 ctx.restore();
 
-                ctx.fillRect(
-                    brickX,
-                    brickY,
-                    brickWidth,
-                    brickHeight
-                );
-
-                //ブロックが少しずつ消える処理
-                if(b.status === "breaking"){
+　 //ブロックが少しずつ消える処理
+　  if(b.status === "breaking"){
 
     b.alpha -= 0.08;
 
@@ -241,23 +225,10 @@ function collisionDetection(){
 
                     b.status = "breaking";
                     score++;
+                    return;
                     if(score === maxScore){
 
-    gameOver = true;
-
-    draw();
-
-    ctx.fillStyle = "rgba(0,0,0,0.7)";
-    ctx.fillRect(0,0,canvas.width,canvas.height);
-
-    ctx.fillStyle = "#fff";
-    ctx.font = "60px sans-serif";
-    ctx.textAlign = "center";
-
-    ctx.fillText("🎉 YOU WIN! 🎉",400,220);
-
-    ctx.font = "30px sans-serif";
-    ctx.fillText("Enterキーでリスタート",400,300);
+    gameClear = true;
 
 }
                 }
@@ -271,7 +242,25 @@ function collisionDetection(){
 　}
 
 function draw(){
+     if(gameClear){
 
+        ctx.clearRect(0,0,canvas.width,canvas.height);
+
+        ctx.fillStyle = "rgba(0,0,0,0.8)";
+        ctx.fillRect(0,0,canvas.width,canvas.height);
+
+        ctx.fillStyle = "#fff";
+        ctx.textAlign = "center";
+
+        ctx.font = "60px sans-serif";
+        ctx.fillText("🎉 YOU WIN! 🎉",400,220);
+
+        ctx.font = "30px sans-serif";
+        ctx.fillText("Enterキーでリスタート",400,300);
+
+        return;
+    }
+    
      if(!gameStart){
 
     ctx.clearRect(0,0,canvas.width,canvas.height);
