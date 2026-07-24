@@ -50,7 +50,11 @@ for(let c = 0; c < brickColumnCount; c++){
 
 //変数定義
 let gameOver = false;
+
 let score = 0;  
+// ブロックの総数
+const maxScore = brickRowCount * brickColumnCount;
+
 let rightPressed = false;
 let leftPressed = false;
 
@@ -175,6 +179,13 @@ function collisionDetection(){
 
                     b.status = false;
                     score++;
+                    if(score === maxScore){
+
+    alert("🎉 YOU WIN!");
+
+    location.reload();
+
+}
                 }
 
             }
