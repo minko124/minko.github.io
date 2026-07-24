@@ -40,7 +40,7 @@ for(let c = 0; c < brickColumnCount; c++){
         bricks[c][r] = {
             x:0,
             y:0,
-            status:true
+            status:true,
             alpha:1
         };
 
@@ -128,7 +128,7 @@ function drawBricks(){
         for(let r=0;r<brickRowCount;r++){
 
             const b = bricks[c][r];
-            if(b.status){
+            if(b.status !== false){
 
                 const brickX =
                     brickOffsetLeft +
