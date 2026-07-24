@@ -37,12 +37,21 @@ for(let c = 0; c < brickColumnCount; c++){
 
     for(let r = 0; r < brickRowCount; r++){
 
-        bricks[c][r] = {
-            x:0,
-            y:0,
-            status:true,
-            alpha:1
-        };
+        const colors = [
+    "#ef4444", // 赤
+    "#f97316", // オレンジ
+    "#eab308", // 黄色
+    "#22c55e", // 緑
+    "#3b82f6"  // 青
+];
+
+bricks[c][r] = {
+    x: 0,
+    y: 0,
+    status: true,
+    alpha: 1,
+    color: colors[r]
+};
 
     }
 
@@ -141,7 +150,19 @@ function drawBricks(){
                 bricks[c][r].x = brickX;
                 bricks[c][r].y = brickY;
 
-                ctx.fillStyle = `rgba(56,189,248,${b.alpha})`;
+                ctx.save();
+
+ctx.globalAlpha = b.alpha;
+ctx.fillStyle = b.color;
+
+ctx.fillRect(
+    brickX,
+    brickY,
+    brickWidth,
+    brickHeight
+);
+
+ctx.restore();
 
                 ctx.fillRect(
                     brickX,
