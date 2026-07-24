@@ -41,6 +41,7 @@ for(let c = 0; c < brickColumnCount; c++){
             x:0,
             y:0,
             status:true
+            alpha:1
         };
 
     }
@@ -126,7 +127,8 @@ function drawBricks(){
 
         for(let r=0;r<brickRowCount;r++){
 
-            if(bricks[c][r].status){
+            const b = bricks[c][r];
+            if(b.status){
 
                 const brickX =
                     brickOffsetLeft +
@@ -139,7 +141,7 @@ function drawBricks(){
                 bricks[c][r].x = brickX;
                 bricks[c][r].y = brickY;
 
-                ctx.fillStyle = "#38bdf8";
+                ctx.fillStyle = `rgba(56,189,248,${b.alpha})`;
 
                 ctx.fillRect(
                     brickX,
@@ -147,6 +149,19 @@ function drawBricks(){
                     brickWidth,
                     brickHeight
                 );
+
+                //ブロックが少しずつ消える処理
+                if(b.status === "breaking"){
+
+    b.alpha -= 0.08;
+
+    if(b.alpha <= 0){
+
+        b.status = false;
+
+    }
+
+}
 
             }
 
@@ -164,8 +179,7 @@ function collisionDetection(){
 
             const b = bricks[c][r];
 
-            if(b.status){
-
+            if(b.status === true){
                 if(
 
                     ball.x > b.x &&
@@ -177,7 +191,7 @@ function collisionDetection(){
 
                     ball.dy *= -1;
 
-                    b.status = false;
+                    b.status = "breaking";
                     score++;
                     if(score === maxScore){
 
