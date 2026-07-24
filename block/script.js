@@ -48,9 +48,9 @@ for(let c = 0; c < brickColumnCount; c++){
 }
 
 
-
+//変数定義
 let gameOver = false;
-   
+let score = 0;  
 let rightPressed = false;
 let leftPressed = false;
 
@@ -103,6 +103,16 @@ function drawPaddle(){
         paddle.width,
         paddle.height
     );
+
+}
+
+function drawScore(){
+
+    ctx.font = "24px sans-serif";
+
+    ctx.fillStyle = "#ffffff";
+
+    ctx.fillText("Score : " + score, 20, 30);
 
 }
 
@@ -164,7 +174,7 @@ function collisionDetection(){
                     ball.dy *= -1;
 
                     b.status = false;
-
+                    score++;
                 }
 
             }
@@ -191,6 +201,8 @@ function draw(){
 
     drawPaddle();
 
+    drawScore();
+    
     // バーを動かす
 
 if(rightPressed && paddle.x < canvas.width - paddle.width){
