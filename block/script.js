@@ -140,7 +140,40 @@ function drawBricks(){
 
     }
 
-}
+　　}
+
+function collisionDetection(){
+
+    for(let c = 0; c < brickColumnCount; c++){
+
+        for(let r = 0; r < brickRowCount; r++){
+
+            const b = bricks[c][r];
+
+            if(b.status){
+
+                if(
+
+                    ball.x > b.x &&
+                    ball.x < b.x + brickWidth &&
+                    ball.y > b.y &&
+                    ball.y < b.y + brickHeight
+
+                ){
+
+                    ball.dy *= -1;
+
+                    b.status = false;
+
+                }
+
+            }
+
+        }
+
+    }
+
+　}
 
 function draw(){
 
@@ -151,6 +184,8 @@ function draw(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 
     drawBricks();
+
+    collisionDetection();
     
     drawBall();
 
